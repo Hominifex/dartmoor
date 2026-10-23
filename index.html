@@ -75,8 +75,16 @@
   .suche::placeholder{color:#7d7364}
   .treffer{color:#8f8677;font-size:12.5px;margin:8px 0 2px;min-height:16px}
 
-  .kat{margin:26px 0 8px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
-    border-top:1px solid var(--line);padding-top:16px}
+  .kat{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  details.block{border-top:1px solid var(--line);padding:2px 0}
+  details.block>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
+    padding:16px 0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:650}
+  details.block>summary::-webkit-details-marker{display:none}
+  details.block>summary .zahl{margin-left:auto;color:#8f8677;font-size:12px;letter-spacing:0;text-transform:none;font-weight:400}
+  details.block>summary .pfeil{transition:transform .18s;font-size:11px;color:#8f8677}
+  details.block[open]>summary .pfeil{transform:rotate(90deg)}
+  details.block>summary:hover{color:#f0d294}
+  .blockhinweis{color:#8f8677;font-size:12.5px;margin:-8px 0 10px}
   .gericht{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed rgba(52,44,34,.8);align-items:baseline}
   .gericht .txt{flex:1}
   .gericht .n{font-weight:600;font-size:16px}
@@ -137,7 +145,7 @@
 
   <section id="karte">
     <h2>Speisekarte</h2>
-    <p class="lead">Alle Gerichte mit Preis, durchsuchbar. Tippe „Burger", „vegan" oder „Guinness".</p>
+    <p class="lead">Tippe eine Gruppe auf — oder suche direkt nach „Burger", „vegan" oder „Guinness".</p>
     <input class="suche" id="suche" type="search" placeholder="Suchen: Burger, Pommes, Guinness …" autocomplete="off">
     <div class="treffer" id="treffer"></div>
     <div id="liste"></div>
@@ -254,18 +262,22 @@ function zeichne(filter=""){
   const f = filter.trim().toLowerCase();
   const liste = document.getElementById("liste");
   let html = "", treffer = 0;
-  KARTE.forEach(gruppe => {
+  KARTE.forEach((gruppe, gi) => {
     const items = gruppe.items.filter(it =>
       !f || (it[0] + " " + it[1] + " " + gruppe.kat).toLowerCase().includes(f));
     if(!items.length) return;
     treffer += items.length;
-    html += `<div class="kat">${gruppe.kat}</div>`;
-    if(gruppe.hint) html += `<div style="color:#8f8677;font-size:12.5px;margin:-4px 0 8px">${gruppe.hint}</div>`;
+    // Aufgeklappt: immer bei aktiver Suche, sonst nur die erste Gruppe
+    const offen = f ? " open" : (gi === 0 ? " open" : "");
+    html += `<details class="block"${offen}>
+      <summary><span class="pfeil">▶</span>${gruppe.kat}<span class="zahl">${items.length}</span></summary>`;
+    if(gruppe.hint) html += `<div class="blockhinweis">${gruppe.hint}</div>`;
     items.forEach(it => {
       html += `<div class="gericht">
         <div class="txt"><div class="n">${it[0]}</div>${it[1] ? `<div class="d">${it[1]}</div>` : ""}</div>
         <div class="p">${it[2]} €</div></div>`;
     });
+    html += `</details>`;
   });
   if(!treffer) html = `<div class="leer">Dazu steht nichts auf der Karte — frag uns einfach.</div>`;
   html += `<div style="margin-top:18px;color:#8f8677;font-size:12.5px">Soßen: ${SAUCEN}. Alle Burger auf Wunsch ohne Pommes (minus 3,00 €).</div>`;
