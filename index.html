@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dartmoor Inn Erlangen — Burger, Currywurstbrunnen, Guinness</title>
+<meta name="description" content="Dartmoor Inn, Friedrichstraße 34, Erlangen: hausgemachte Burger seit 2002, Currywurstbrunnen, Guinness vom Fass, Biergarten und Darts. Montag bis Samstag 17–1 Uhr, Sonntag geschlossen.">
+<meta property="og:title" content="Dartmoor Inn Erlangen — Burger & Guinness">
+<meta property="og:description" content="Hausgemachte Burger seit 2002, Currywurstbrunnen, Guinness vom Fass. Friedrichstraße 34, Erlangen.">
+<meta name="theme-color" content="#12100d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2312100d'/><text y='72' x='50' text-anchor='middle' font-size='58' fill='%23d8ae57'>D</text></svg>">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Restaurant",
+ "name":"The Dartmoor Inn",
+ "servesCuisine":["Burger","Currywurst","Pub"],
+ "priceRange":"€€",
+ "telephone":"+49 9131 205120",
+ "address":{"@type":"PostalAddress","streetAddress":"Friedrichstraße 34","postalCode":"91054","addressLocality":"Erlangen","addressCountry":"DE"},
+ "openingHoursSpecification":[
+   {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"17:00","closes":"01:00"}
+ ],
+ "acceptsReservations":"https://schema.org/False"
+}
+</script>
+<style>
+  :root{
+    --bg:#12100d; --bg2:#1a1712; --card:#201c16; --line:#332b22;
+    --ink:#f2ece1; --muted:#b3a893; --gold:#d8ae57; --green:#5fbf7f; --red:#d0736a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:var(--gold);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  header.top{position:sticky;top:0;z-index:20;background:rgba(18,16,13,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:12px;height:56px}
+  .brand{font-weight:700;letter-spacing:.02em}
+  .brand small{display:block;font-weight:400;font-size:11px;color:var(--muted);letter-spacing:.08em}
+  nav{margin-left:auto;display:flex;gap:14px;font-size:14px}
+  nav a{color:var(--muted)}
+  nav a:hover{color:var(--ink)}
+  @media(max-width:640px){nav{display:none}}
+
+  .hero{padding:34px 0 10px}
+  .hero h1{font-size:clamp(30px,8vw,44px);line-height:1.05;margin:0 0 6px;letter-spacing:-.02em}
+  .hero p.sub{color:var(--muted);margin:0 0 18px;font-size:15px}
+  .status{display:inline-flex;align-items:center;gap:8px;font-weight:650;font-size:14px;
+    padding:7px 13px;border-radius:999px;border:1px solid;margin-bottom:8px}
+  .status.open{color:#7ed49b;border-color:rgba(95,191,127,.45);background:rgba(95,191,127,.12)}
+  .status.closed{color:#e79a94;border-color:rgba(208,115,106,.45);background:rgba(208,115,106,.12)}
+  .status .dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+  .kueche{color:var(--muted);font-size:13px;margin:2px 0 18px}
+
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 26px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:12px;
+    font-weight:650;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+  .btn.primary{background:var(--gold);color:#1a1408;border-color:var(--gold)}
+
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  h2{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 18px}
+
+  .foto{width:100%;height:210px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:18px}
+
+  .suche{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--bg2);color:var(--ink);font-size:15px;margin-bottom:14px}
+  .suche::placeholder{color:#7d7364}
+
+  .kat{margin:22px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .gericht{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+  .gericht:last-child{border-bottom:0}
+  .gericht .txt{flex:1}
+  .gericht .n{font-weight:600}
+  .gericht .d{color:var(--muted);font-size:13.5px;margin-top:1px}
+  .gericht .p{font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap;color:var(--ink)}
+  .leer{color:var(--muted);padding:14px 0;font-size:14px}
+
+  .karten{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  @media(max-width:560px){.karten{grid-template-columns:1fr}}
+  .karte{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px}
+  .karte h3{margin:0 0 6px;font-size:15px}
+  .karte p{margin:0;color:var(--muted);font-size:13.5px}
+
+  table.zeiten{width:100%;border-collapse:collapse;font-size:15px}
+  table.zeiten td{padding:7px 0;border-bottom:1px solid var(--line)}
+  table.zeiten td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+  table.zeiten tr.heute td{color:var(--gold);font-weight:650}
+  table.zeiten tr.ruhe td{color:#7d7364}
+
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);text-decoration:underline}
+  .hinweis{margin-top:26px;padding:12px 14px;border:1px dashed var(--line);border-radius:12px;
+    font-size:12.5px;color:#8f8677}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Dartmoor Inn<small>ERLANGEN · SEIT 2002</small></div>
+    <nav>
+      <a href="#karte">Karte</a>
+      <a href="#curry">Currywurst</a>
+      <a href="#zeiten">Zeiten</a>
+      <a href="#anfahrt">Anfahrt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div id="status" class="status closed"><span class="dot"></span><span id="statustext">Zeiten werden geladen</span></div>
+    <div class="kueche" id="kueche"></div>
+    <h1>Burger, Guinness,<br>Currywurstbrunnen.</h1>
+    <p class="sub">Friedrichstraße 34, Erlangen · hausgemacht seit 2002 · Biergarten, Darts, Live-Musik</p>
+    <div class="cta">
+      <a class="btn primary" href="tel:+499131205120">📞 09131 205120</a>
+      <a class="btn" href="#karte">Karte ansehen</a>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Friedrichstra%C3%9Fe+34,+91054+Erlangen" target="_blank" rel="noopener">Route ↗</a>
+    </div>
+  </div>
+
+  <section id="karte">
+    <h2>Speisekarte</h2>
+    <p class="lead">Alle Gerichte mit Preis — durchsuchbar, ohne PDF. Stand: Karte des Hauses.</p>
+    <input class="suche" id="suche" type="search" placeholder="Suchen: Burger, Guinness, Pommes …" autocomplete="off">
+    <div id="liste"></div>
+  </section>
+
+  <section id="curry">
+    <h2>Der Currywurstbrunnen</h2>
+    <p class="lead">Das Hausgericht für Gruppen — bitte einen Tag vorher bestellen.</p>
+    <div class="karten">
+      <div class="karte"><h3>Currywurst mit Pommes</h3><p>Hausgemachte Currysoße, verschiedene Gewürze zum Nachschärfen. Pro Person <b>8,00 €</b>, ab 4 Personen.</p></div>
+      <div class="karte"><h3>Nachschlag</h3><p>Jede extra Currywurst <b>4,50 €</b> · Portion Pommes <b>3,90 €</b></p></div>
+    </div>
+  </section>
+
+  <section id="zeiten">
+    <h2>Öffnungszeiten</h2>
+    <p class="lead">Küche bis 22:00 Uhr. Sonntag Ruhetag.</p>
+    <table class="zeiten" id="zeitentabelle"></table>
+  </section>
+
+  <section id="anfahrt">
+    <h2>Anfahrt</h2>
+    <p class="lead">Friedrichstraße 34, 91054 Erlangen — Innenstadt, wenige Minuten von der Fußgängerzone.</p>
+    <div class="karten">
+      <div class="karte"><h3>Reservierung</h3><p>Nur telefonisch: <a href="tel:+499131205120">09131 205120</a></p></div>
+      <div class="karte"><h3>Zahlung</h3><p>Bar, EC, Kreditkarte, kontaktlos</p></div>
+      <div class="karte"><h3>Im Haus</h3><p>Biergarten, Darts, Live-Musik, Filmpremieren, Privatfeiern</p></div>
+      <div class="karte"><h3>WLAN</h3><p>Kostenlos für Gäste</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="hinweis">Dies ist ein unverbindlicher Gestaltungsvorschlag, keine offizielle Seite des Dartmoor Inn.
+      Inhalte und Preise stammen von der bisherigen Website des Hauses (Stand Oktober 2026). Fotos folgen nach Freigabe.</div>
+    <p style="margin-top:18px">
+      <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · The Dartmoor Inn, Friedrichstraße 34, 91054 Erlangen
+    </p>
+  </footer>
+</main>
+
+<script>
+const KARTE = [
+  { kat:"Burger vom Rind", hint:"200 g Rindfleisch, Tomaten, Zwiebeln, Gewürzgurken, Salat, Burgersoße — mit Pommes", items:[
+    ["Hamburger","Klassiker","14,50"],
+    ["Dartmoor Cheeseburger","mit Käse","15,50"],
+    ["Aloha Burger","Ananas, Käse","17,00"],
+    ["Cheesy Porky Burger","Speck, Käse","19,50"],
+    ["Double-Top Burger","doppelt Fleisch, doppelt Käse","21,00"],
+    ["Franken Burger","Bratwurstgehäck, gebratene Zwiebeln, Honig-Senf","18,50"],
+    ["Hot-Like-Hell Burger","scharfe Soße, Jalapeños","18,50"],
+    ["Matterhorn Burger","Rösti, Käse, geröstete Zwiebeln","18,50"]
+  ]},
+  { kat:"Burger mit Geflügel und Fisch", hint:"", items:[
+    ["Chicken Run","Hähnchenbrustfilet","17,50"],
+    ["Sweet Chili","Hähnchenbrustfilet, Karotten, Tomate, Sweet-Chili-Soße","17,50"],
+    ["Captain Nemo","Fischfilet, Remoulade","16,00"]
+  ]},
+  { kat:"Vegetarisch", hint:"Mit Pommes und hausgemachter Soße, auf Wunsch vegan", items:[
+    ["Garden Burger","hausgemachter Gemüseburger, Tomaten, Gurke, Karotten","14,00"],
+    ["Umami Burger 100 g","Pilze, Shitake, Tomaten, Zwiebeln","11,50"],
+    ["Umami Burger 200 g","dito, doppelte Portion","15,50"],
+    ["Käse auf jeden Burger","","1,50"]
+  ]},
+  { kat:"Extras", hint:"", items:[
+    ["Bacon","","3,50"],
+    ["Ei","","1,00"],
+    ["Jalapeños","","1,50"],
+    ["Käse","","2,00"],
+    ["Zwiebeln","","1,00"],
+    ["Ohne Pommes","wird abgezogen","-3,00"]
+  ]},
+  { kat:"Bier vom Fass", hint:"Preise für 0,4 l / 0,5 l / 1,5 l", items:[
+    ["Guinness","0,4 l · 0,5 l · 1,5 l","5,80 / — / 16,50"],
+    ["Kilkenny","0,4 l · 0,5 l · 1,5 l","5,80 / — / 16,50"],
+    ["Veltins Pils","0,4 l · 0,5 l · 1,5 l","3,90 / 4,50 / 12,50"],
+    ["Aktien Landbier Dunkel","0,5 l · 1,5 l","4,50 / 12,50"],
+    ["Aktien Bayreuther Helles","0,5 l · 1,5 l","4,50 / 12,50"],
+    ["Steinbach Storchen-Bier","0,5 l · 1,5 l","4,70 / 13,00"],
+    ["Radler 1,3","0,5 l · 1,5 l","4,40 / 12,50"]
+  ]},
+  { kat:"Flaschenbier", hint:"", items:[
+    ["Maisel's Weisse Hell / Dunkel / Leichtes","0,5 l","4,60"],
+    ["Maisels Kristall Weizen","0,5 l","4,60"],
+    ["Maisel & Friends, verschiedene Sorten","0,33 l","4,10"],
+    ["Gösser Radler","0,5 l","4,40"],
+    ["Veltins Steini","0,33 l","3,90"],
+    ["Heineken","0,33 l","3,90"],
+    ["Cola-Weizen","0,5 l","4,60"]
+  ]},
+  { kat:"Alkoholfrei", hint:"", items:[
+    ["Guinness 0,0 %","0,44 l","4,80"],
+    ["Bayreuther Hell alkoholfrei","0,5 l","4,50"],
+    ["Heineken 0,0 %","0,33 l","3,90"],
+    ["Becks Blue","0,33 l","3,90"],
+    ["Maisel & Friends Pale Ale alkoholfrei","0,33 l","3,90"],
+    ["Maisel's Weizen alkoholfrei","0,5 l","4,60"]
+  ]},
+  { kat:"Cider", hint:"", items:[
+    ["Strongbow Cider vom Fass","0,5 l","5,60"],
+    ["Bulmers Original","0,5 l","5,60"],
+    ["Bulmers Pear","0,5 l","5,80"],
+    ["Bulmers Crushed Red Berries","0,5 l","5,80"]
+  ]}
+];
+
+const SAUCEN = "Sweet Chili · Hot-Like-Hell · Honig-Senf · Remoulade · BBQ · Salsa";
+
+// Hinweis: innerHTML wird ausschließlich mit fest eingebauten Kartendaten aus
+// dem KARTE-Array gefüllt; Nutzereingaben dienen nur als Filter und werden nie
+// eingesetzt. Kein XSS-Vektor.
+function zeichne(filter=""){
+  const f = filter.trim().toLowerCase();
+  const liste = document.getElementById("liste");
+  let html = "", treffer = 0;
+  KARTE.forEach(gruppe => {
+    const items = gruppe.items.filter(it =>
+      !f || (it[0] + " " + it[1] + " " + gruppe.kat).toLowerCase().includes(f));
+    if(!items.length) return;
+    treffer += items.length;
+    html += `<div class="kat">${gruppe.kat}</div>`;
+    if(gruppe.hint) html += `<div style="color:#8f8677;font-size:12.5px;margin:-2px 0 8px">${gruppe.hint}</div>`;
+    items.forEach(it => {
+      html += `<div class="gericht">
+        <div class="txt"><div class="n">${it[0]}</div>${it[1] ? `<div class="d">${it[1]}</div>` : ""}</div>
+        <div class="p">${it[2]} €</div></div>`;
+    });
+  });
+  if(!treffer) html = `<div class="leer">Nichts gefunden. Frag uns einfach — vieles steht nicht auf der Karte.</div>`;
+  html += `<div style="margin-top:16px;color:#8f8677;font-size:12.5px">Unsere Soßen: ${SAUCEN}. Alle Burger auf Wunsch ohne Pommes (minus 3,00 €).</div>`;
+  liste.innerHTML = html;
+}
+
+// Öffnungszeiten: Mo–Sa 17:00–01:00, So geschlossen. Küche bis 22:00.
+const TAGE = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+const OFFEN = [null,["17:00","01:00"],["17:00","01:00"],["17:00","01:00"],["17:00","01:00"],["17:00","01:00"],["17:00","01:00"]];
+
+function min(s){ return (+s.split(":")[0])*60 + (+s.split(":")[1]); }
+
+function status(){
+  const jetzt = new Date();
+  const i = jetzt.getDay();
+  const jetztMin = jetzt.getHours()*60 + jetzt.getMinutes();
+  const heute = OFFEN[i], gestern = OFFEN[(i+6)%7];
+  const nacht = f => f && min(f[1]) <= min(f[0]);
+  if(gestern && nacht(gestern) && jetztMin < min(gestern[1]))
+    return {offen:true, bis:gestern[1], tag:"gestern"};
+  if(heute){
+    if(nacht(heute) && jetztMin >= min(heute[0])) return {offen:true, bis:heute[1]};
+    if(!nacht(heute) && jetztMin >= min(heute[0]) && jetztMin < min(heute[1])) return {offen:true, bis:heute[1]};
+    if(jetztMin < min(heute[0])) return {offen:false, ab:heute[0], heute:true};
+  }
+  for(let k=1;k<=7;k++){
+    const f = OFFEN[(i+k)%7];
+    if(f) return {offen:false, ab:f[0], tag:TAGE[(i+k)%7]};
+  }
+  return {offen:false};
+}
+
+function statusZeichnen(){
+  const s = status();
+  const el = document.getElementById("status");
+  const txt = document.getElementById("statustext");
+  el.classList.toggle("open", s.offen);
+  el.classList.toggle("closed", !s.offen);
+  if(s.offen){ txt.textContent = `Jetzt geöffnet · bis ${s.bis}`; }
+  else if(s.heute){ txt.textContent = `Geschlossen · öffnet heute ab ${s.ab}`; }
+  else if(s.tag){ txt.textContent = `Geschlossen · öffnet ${s.tag === "Sonntag" ? "am" : ""} ${s.tag} ab ${s.ab}`; }
+  else { txt.textContent = "Geschlossen"; }
+
+  const jetzt = new Date();
+  const kuecheOffen = jetzt.getHours() >= 17 && (jetzt.getHours() < 22);
+  document.getElementById("kueche").textContent = s.offen
+    ? (kuecheOffen ? "Küche bis 22:00 Uhr" : "Küche geschlossen — Getränke bis " + s.bis)
+    : "Küche täglich 17:30 – 22:00 Uhr";
+}
+
+function zeitenTabelle(){
+  const i = new Date().getDay();
+  let html = "";
+  for(let k=0;k<7;k++){
+    const t = (i+k)%7;
+    const f = OFFEN[t];
+    const heute = k === 0;
+    html += `<tr class="${heute ? "heute" : (f ? "" : "ruhe")}">
+      <td>${TAGE[t]}</td><td>${f ? f[0] + " – " + f[1] : "Ruhetag"}</td></tr>`;
+  }
+  document.getElementById("zeitentabelle").innerHTML = html;
+}
+
+document.getElementById("suche").addEventListener("input", e => zeichne(e.target.value));
+zeichne(); statusZeichnen(); zeitenTabelle();
+setInterval(statusZeichnen, 60000);
+</script>
+</body>
+</html>
